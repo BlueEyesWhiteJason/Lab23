@@ -35,10 +35,10 @@ namespace Lab23Again2.Controllers
                 Response.Cookies.Append("username", u.UserName);
                 Response.Cookies.Append("password", u.Password);
                 ViewData["username"] = Request.Cookies["username"];
-                return View("Shop/Index");
+                return this.RedirectToAction("Index", "Shop");
             }
             else
-            {
+            {   
                 ViewData["username"] = "invalid";
             }
             return View();
@@ -48,13 +48,18 @@ namespace Lab23Again2.Controllers
         {
             using (_context)
             {
-                //_context.Users.Find().UserName.Where()
-                var us = _context.Users.Where(c => c.UserName == u.UserName && c.Password == u.Password).ToList();
-                if (us != null)
+                List<Users> userList = _context.Users.ToList();
+
+                for (int i = 0; i < userList.Count(); i++)
                 {
-                    return true;
+                    if (userList[i].UserName == u.UserName && userList[i].Password == u.Password)
+                    {
+                        Response.Cookies.Append("funds", userList[i].Funds.ToString());
+
+                        return true;
+                    }
                 }
-            }
+            }  
             return false;
         }
 

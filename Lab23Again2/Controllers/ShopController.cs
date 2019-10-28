@@ -21,6 +21,10 @@ namespace Lab23Again2.Controllers
         // GET: Shop
         public async Task<IActionResult> Index()
         {
+            ViewData["funds"] = Request.Cookies["funds"];
+            ViewData["username"] = Request.Cookies["username"];
+
+
             return View(await _context.Products.ToListAsync());
         }
 
