@@ -42,6 +42,7 @@ namespace Lab23Again2.Controllers
             {
                 userFunds -= carPrice;
                 Response.Cookies.Append("funds", userFunds.ToString());
+                ViewData["funds"] = Request.Cookies["funds"];
                 ViewBag.BuyMessage = "Congratulations on your new car! All sales are final.";
             }
             else
