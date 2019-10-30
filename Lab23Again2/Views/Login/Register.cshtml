@@ -1,43 +1,12 @@
-﻿@model Lab23Again2.Models.Users
+﻿<h2>Registration</h2>
+<h2>@ViewBag.Error</h2>
+<form method="post">
+    Username: <br />
+    <input type="text" name="Username" />
+    Password: <br />
+    <input type="password" name="Password" minlength="7" maxlength="15" />
+    Funds: <br />
+    <input type="number" name="funds" />
+    <input type="submit" />
 
-@{
-    ViewData["Title"] = "Create";
-}
-
-<h1>Create</h1>
-
-<h4>Users</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="UserName" class="control-label"></label>
-                <input asp-for="UserName" class="form-control" />
-                <span asp-validation-for="UserName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Funds" class="control-label"></label>
-                <input asp-for="Funds" class="form-control" />
-                <span asp-validation-for="Funds" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+</form>

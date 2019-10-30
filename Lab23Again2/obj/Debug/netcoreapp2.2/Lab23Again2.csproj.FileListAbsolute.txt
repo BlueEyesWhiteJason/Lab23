@@ -32,10 +32,10 @@ C:\Users\Jarmo\source\repos\Lab23Again2\Lab23Again2\obj\Debug\netcoreapp2.2\Razo
 C:\Users\Jarmo\source\repos\Lab23Again2\Lab23Again2\obj\Debug\netcoreapp2.2\Razor\Views\Login\Edit.g.cshtml.cs
 C:\Users\Jarmo\source\repos\Lab23Again2\Lab23Again2\obj\Debug\netcoreapp2.2\Razor\Views\Login\Index.g.cshtml.cs
 C:\Users\Jarmo\source\repos\Lab23Again2\Lab23Again2\obj\Debug\netcoreapp2.2\Razor\Views\Login\Register.g.cshtml.cs
-C:\Users\Jarmo\source\repos\Lab23Again2\Lab23Again2\obj\Debug\netcoreapp2.2\Razor\Views\Shop\Create.g.cshtml.cs
 C:\Users\Jarmo\source\repos\Lab23Again2\Lab23Again2\obj\Debug\netcoreapp2.2\Razor\Views\Shop\Delete.g.cshtml.cs
 C:\Users\Jarmo\source\repos\Lab23Again2\Lab23Again2\obj\Debug\netcoreapp2.2\Razor\Views\Shop\Details.g.cshtml.cs
-C:\Users\Jarmo\source\repos\Lab23Again2\Lab23Again2\obj\Debug\netcoreapp2.2\Razor\Views\Shop\Edit.g.cshtml.cs
 C:\Users\Jarmo\source\repos\Lab23Again2\Lab23Again2\obj\Debug\netcoreapp2.2\Razor\Views\Shop\Index.g.cshtml.cs
 C:\Users\Jarmo\source\repos\Lab23Again2\Lab23Again2\obj\Debug\netcoreapp2.2\Razor\Views\Login\Login.g.cshtml.cs
 C:\Users\Jarmo\source\repos\Lab23Again2\Lab23Again2\obj\Debug\netcoreapp2.2\Razor\Views\Login\LoginSuccess.g.cshtml.cs
+C:\Users\Jarmo\source\repos\Lab23Again2\Lab23Again2\obj\Debug\netcoreapp2.2\Razor\Views\Shop\Buy.g.cshtml.cs
+C:\Users\Jarmo\source\repos\Lab23Again2\Lab23Again2\obj\Debug\netcoreapp2.2\Razor\Views\Shop\Receipt.g.cshtml.cs

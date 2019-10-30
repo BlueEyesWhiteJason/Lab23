@@ -23,11 +23,53 @@ namespace Lab23Again2.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult Register(Users u)
+        {
+            if (_context.Users.Contains(u))
+            {
+                ViewBag.Error = "That user already exists";
+                return View();
+            }
+            else
+            {
+                _context.Users.Add(u);
+                _context.SaveChanges();
+                Response.Cookies.Append("username", u.UserName);
+                Response.Cookies.Append("password", u.Password);
+                Response.Cookies.Append("funds", u.Funds.ToString());
+
+                return RedirectToAction("Index", "Shop");
+            }
+        }
+
         public IActionResult Login()
         {
             return View();
         }
 
+        [HttpPost]
+        public IActionResult Login(string Username, string Password)
+        {
+            List<Users> users = _context.Users.ToList();
+
+            for (int i = 0; i < users.Count; i++)
+            {
+                Users u = users[i];
+                if (u.UserName == Username && u.Password == Password)
+                {
+                    Response.Cookies.Append("username", u.UserName);
+                    Response.Cookies.Append("funds", u.Funds.ToString());
+                    return RedirectToAction("Index", "Shop");
+                }
+
+            }
+
+            ViewBag.Error = "Incorrect Username or Password. please don't do that ";
+            return View();
+        }
+
+        /*
         public IActionResult LoginSuccess(Users u)
         {
             if(ValidUser(u))
@@ -62,7 +104,7 @@ namespace Lab23Again2.Controllers
             }  
             return false;
         }
-
+         */
         // GET: Login
         public async Task<IActionResult> Index()
         {

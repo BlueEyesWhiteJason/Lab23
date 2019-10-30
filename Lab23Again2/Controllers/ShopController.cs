@@ -18,6 +18,40 @@ namespace Lab23Again2.Controllers
             _context = context;
         }
 
+        //tommy help
+        public IActionResult Buy(int id)
+        {
+            Products p = _context.Products.Find(id);
+            if (p != null)
+            {
+                return View(p);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Shop");
+            }
+        }
+
+        public IActionResult Receipt(int id)
+        {
+            Products p = _context.Products.Find(id);
+            double userFunds = double.Parse(Request.Cookies["funds"]);
+            double carPrice = (double) p.Price;
+
+            if (userFunds >= carPrice)
+            {
+                userFunds -= carPrice;
+                Response.Cookies.Append("funds", userFunds.ToString());
+                ViewBag.BuyMessage = "Congratulations on your new car! All sales are final.";
+            }
+            else
+            {
+                ViewBag.BuyMessage = "Sorry, you have insufficient funds";
+            }
+
+            return View();
+        }
+         
         // GET: Shop
         public async Task<IActionResult> Index()
         {
